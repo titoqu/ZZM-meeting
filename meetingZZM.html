@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yes or No Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Ensures full height */
+            margin: 0; /* Remove default margin */
+        }
+        .content {
+            text-align: center;
+        }
+        h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            font-size: 20px;
+            margin-right: 10px;
+        }
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h2>Ist dies die Initialbesprechung für Ihr Projekt? (Is this the initial meeting for your project?):</h2>
+        <form id="answerForm" action="#">
+            <label for="answerYes">Yes</label>
+            <input type="radio" id="answerYes" name="answer" value="yes">
+            <label for="answerNo">No</label>
+            <input type="radio" id="answerNo" name="answer" value="no">
+            <br><br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('answerForm').onsubmit = function() {
+            var answer = document.querySelector('input[name="answer"]:checked');
+            if (answer) {
+                if (answer.value === 'yes') {
+                    window.location.href = 'https://forms.office.com/e/8D8ka4Dq62';
+                } else if (answer.value === 'no') {
+                    window.location.href = 'https://outlook.office365.com/owa/calendar/StatisticsZZM2%40UZH.onmicrosoft.com/bookings/';
+                }
+            }
+            return false; // Prevents the form from actually submitting
+        };
+    </script>
+</body>
+</html>
